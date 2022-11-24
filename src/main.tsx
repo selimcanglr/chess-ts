@@ -6,6 +6,7 @@ import {
 import './index.css'
 import ErrorPage from './routes/ErrorPage'
 import GamePage from './routes/GamePage'
+import LocalGameInitPage from './routes/LocalGameInitPage'
 import StartPage from './routes/StartPage'
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: '/play',
     element: <GamePage />
+  },
+  {
+    path: '/local-init',
+    element: <LocalGameInitPage />
   }
 ])
 
