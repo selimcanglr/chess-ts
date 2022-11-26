@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Button from "../components/Button";
+import Button from "../components/buttons/Button";
+import IconButton from "../components/buttons/SettingsButton";
 import LocalGameForm from "../components/LocalGameForm";
-import IconButton from "../components/SettingsButton";
 import TextField from "../components/TextField";
 
 const StartPage = () => {

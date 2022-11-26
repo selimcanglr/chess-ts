@@ -1,9 +1,12 @@
 import Board from "../components/Board";
-
+import BackButton from "../components/buttons/BackButton";
 
 const LocalGamePage = () => {
     return (
-        <Board />
+        <div>
+            <BackButton />
+            <Board />
+        </div>
     );
 }
  

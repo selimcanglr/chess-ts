@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import Button from "./Button";
-import SettingsButton from './SettingsButton';
+import BackButton from "./buttons/BackButton";
+import Button from "./buttons/Button";
+import SettingsButton from './buttons/SettingsButton';
 import TextField from "./TextField";
 
 const LocalGameForm = () => {
@@ -8,6 +9,7 @@ const LocalGameForm = () => {
     <form>
         <div className="shadow-2xl p-8">
             <div className="grid gap-6 ">
+                <BackButton />
                 <TextField 
                     id="player-1"
                     label="Player 1"

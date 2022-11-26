@@ -1,33 +1,36 @@
+// Piece SVG's from:
+// By Cburnett - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1499813
+import { ReactComponent as BlackPawn } from '../assets/svg/pieces/black-pawn.svg'
+import { FileType, RankType } from '../types/types'
 import { INITIAL_PIECE_POSITIONS } from "../utils/constants"
 
-export type FileType = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h'
-export type RankType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 type TileColor = 'white' | 'black'
 interface TileProps {
     color: TileColor,
     file: FileType,
     rank: RankType,
-    chessFigure?: React.ReactNode,
+    onClick?: React.MouseEventHandler
+    children?: React.ReactNode,
 }
 
 interface BoardProps {
-
+    invert?: boolean
 }
 
-const Tile = ({color, file, rank, chessFigure}: TileProps) => {
-    const colorClass = color == 'white' ? 'bg-gray-50' : 'bg-green-700' 
+const Tile = ({color, file, rank, children}: TileProps) => {
+    const colorClass = color == 'white' ? ('bg-gray-50') : ('bg-green-700') 
     
     return (
         <div 
-            className={`${colorClass} w-24 h-24`} 
+            className={`${colorClass} lg:h-20 lg:w-20 md:w-16 md:h-16 sm:w-14 sm:h-14 h-10 w-10 text-center flex justify-center align-center`} 
             id={`${file}${rank}`}
         >
-            {chessFigure}
+            {children}
         </div>
     )
 }
 
-const Board = () => {
+const Board = ({invert}: BoardProps) => {
     return (
         <div className="flex h-screen items-center justify-center">
             {
@@ -40,12 +43,14 @@ const Board = () => {
                                 Object.keys(files).map((file: unknown, index) => {
                                     tileColor = tileColor === 'white' ? 'black' : 'white'
                                     return (
-                                        <Tile
-                                            key={`${file}${rank}`}
-                                            color={tileColor}
-                                            file={file as FileType}
-                                            rank={rank as RankType}
-                                        />
+                                            <Tile
+                                                key={`${file}${rank}`}
+                                                color={tileColor}
+                                                file={file as FileType}
+                                                rank={rank as RankType}
+                                            >
+                                                <BlackPawn />
+                                            </Tile>
                                         )
                                 })
                             }

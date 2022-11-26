@@ -1,33 +1,26 @@
-import Bishop from "../chess/pieces/Bishop";
-import King from "../chess/pieces/King";
-import Knight from "../chess/pieces/Knight";
-import Pawn from "../chess/pieces/Pawn";
-import Piece from "../chess/pieces/Piece";
-import Queen from "../chess/pieces/Queen";
-import Rook from "../chess/pieces/Rook";
 import { FileType, RankType } from "../components/Board";
+import { BoardType, PieceEnum as Piece } from "../types/types";
 
-
-export const INITIAL_PIECE_POSITIONS: Record<RankType, Record<FileType, typeof Piece | undefined>> = {
+export const INITIAL_PIECE_POSITIONS: BoardType = {
     1: {
-        'a': Rook,
-        'b': Knight,
-        'c': Bishop,
-        'd': Queen,
-        'e': King,
-        'f': Bishop,
-        'g': Knight,
-        'h': Rook,
+        'a': Piece.Rook,
+        'b': Piece.Knight,
+        'c': Piece.Bishop,
+        'd': Piece.Queen,
+        'e': Piece.King,
+        'f': Piece.Bishop,
+        'g': Piece.Knight,
+        'h': Piece.Rook,
     },
     2: {
-        'a': Pawn,
-        'b': Pawn,
-        'c': Pawn,
-        'd': Pawn,
-        'e': Pawn,
-        'f': Pawn,
-        'g': Pawn,
-        'h': Pawn,
+        'a': Piece.Pawn,
+        'b': Piece.Pawn,
+        'c': Piece.Pawn,
+        'd': Piece.Pawn,
+        'e': Piece.Pawn,
+        'f': Piece.Pawn,
+        'g': Piece.Pawn,
+        'h': Piece.Pawn,
     },
     3: {
         'a': undefined,
@@ -70,23 +63,23 @@ export const INITIAL_PIECE_POSITIONS: Record<RankType, Record<FileType, typeof P
         'h': undefined,
     },
     7: {
-        'a': Pawn,
-        'b': Pawn,
-        'c': Pawn,
-        'd': Pawn,
-        'e': Pawn,
-        'f': Pawn,
-        'g': Pawn,
-        'h': Pawn,
+        'a': Piece.Pawn,
+        'b': Piece.Pawn,
+        'c': Piece.Pawn,
+        'd': Piece.Pawn,
+        'e': Piece.Pawn,
+        'f': Piece.Pawn,
+        'g': Piece.Pawn,
+        'h': Piece.Pawn,
     },
     8: {
-        'a': Rook,
-        'b': Knight,
-        'c': Bishop,
-        'd': Queen,
-        'e': King,
-        'f': Bishop,
-        'g': Knight,
-        'h': Rook,
+        'a': Piece.Rook,
+        'b': Piece.Knight,
+        'c': Piece.Bishop,
+        'd': Piece.Queen,
+        'e': Piece.King,
+        'f': Piece.Bishop,
+        'g': Piece.Knight,
+        'h': Piece.Rook,
     },
 }
