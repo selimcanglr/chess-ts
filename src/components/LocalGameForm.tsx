@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import SettingsButton from './SettingsButton';
 import TextField from "./TextField";
@@ -17,10 +18,14 @@ const LocalGameForm = () => {
                     label="Player 2"
                     placeholder="Player 2"
                 />
-                <SettingsButton />
-                <Button>
-                    Start
-                </Button>
+                <div className="flex align-center justify-center gap-6">
+                    <SettingsButton />
+                    <Link className="inline-block w-100" to='/local-play'>
+                        <Button>
+                            Start
+                        </Button>
+                    </Link>
+                </div>
             </div>
         </div>
     </form>

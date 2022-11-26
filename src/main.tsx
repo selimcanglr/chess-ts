@@ -5,8 +5,8 @@ import {
 } from 'react-router-dom'
 import './index.css'
 import ErrorPage from './routes/ErrorPage'
-import GamePage from './routes/GamePage'
 import LocalGameInitPage from './routes/LocalGameInitPage'
+import GamePage from './routes/LocalGamePage'
 import StartPage from './routes/StartPage'
 
 const router = createBrowserRouter([
@@ -22,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: '/local-init',
     element: <LocalGameInitPage />
+  },
+  {
+    path: '/local-play',
+    element: <GamePage />
   }
 ])
 
