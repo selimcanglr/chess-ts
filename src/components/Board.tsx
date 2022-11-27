@@ -22,10 +22,12 @@ const Tile = ({color, file, rank, children}: TileProps) => {
     
     return (
         <div 
-            className={`${colorClass} lg:h-20 lg:w-20 md:w-16 md:h-16 sm:w-14 sm:h-14 h-10 w-10 text-center flex justify-center align-center`} 
+            className={`${colorClass} lg:h-20 lg:w-20 md:w-16 md:h-16 sm:w-14 sm:h-14 h-10 w-10`} 
             id={`${file}${rank}`}
         >
-            {children}
+            <div className='h-full flex justify-center items-center'>
+                {children}
+            </div>
         </div>
     )
 }
@@ -49,7 +51,7 @@ const Board = ({invert}: BoardProps) => {
                                                 file={file as FileType}
                                                 rank={rank as RankType}
                                             >
-                                                <BlackPawn />
+                                                <BlackPawn className='lg:scale-150 md:scale-125 sm:scale-100 scale-75'/>
                                             </Tile>
                                         )
                                 })
