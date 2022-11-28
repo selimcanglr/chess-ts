@@ -1,4 +1,4 @@
-import { FileType, RankType } from "../components/Board";
+import { FileType, RankType } from "../components/gameboard";
 import { BoardType, PieceEnum as Piece } from "../types/types";
 
 export const INITIAL_PIECE_POSITIONS: BoardType = {
